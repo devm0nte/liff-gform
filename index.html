@@ -35,18 +35,12 @@
                 if (liff.isLoggedIn()) {
                     return liff.getProfile();
                 } else {
-                    liff.login({
-                        redirectUri: "https://liff.line.me/1657462111-YAnBNQ1Q",
-                    });
+                    liff.login();
                 }
             })
             .then((profile) => {
                 window.location.replace(
-                    `https://docs.google.com/forms/d/e/1FAIpQLScqxRVwl5E4b_N_X92rlDY-9FD7uNnUb2oWOtPkWGDsEHvMMg/viewform
-                    ?usp=pp_url&entry.965008843=%E0%B9%83%E0%B8%8A%E0%B9%88&entry.2095414241=${profile.userId}
-                    &entry.1176881220=${profile.displayName}
-                    &entry.1674059252=${profile.pictureUrl}
-                    &entry.1944420085=${profile.statusMessage}`
+                    `https://docs.google.com/forms/d/e/1FAIpQLScqxRVwl5E4b_N_X92rlDY-9FD7uNnUb2oWOtPkWGDsEHvMMg/viewform?usp=pp_url&entry.965008843=%E0%B9%83%E0%B8%8A%E0%B9%88&entry.2095414241=${profile.userId}&entry.1176881220=${profile.displayName}&entry.1674059252=${profile.pictureUrl}&entry.1944420085=${profile.statusMessage}`
                 );
             });
         liff.init({
